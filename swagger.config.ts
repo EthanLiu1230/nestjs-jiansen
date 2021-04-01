@@ -6,7 +6,6 @@ const config = new DocumentBuilder()
   .setTitle('Title')
   .setDescription('Description')
   .setVersion('1.0')
-  .addTag('Api tag')
   .build();
 
 export const configSwagger = (app: INestApplication) => {

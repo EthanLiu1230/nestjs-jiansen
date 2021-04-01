@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Unique } from 'typeorm';
 
 @Entity()
+@Unique(['username'])
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -8,6 +9,7 @@ export class User {
   @Column()
   username: string;
 
+  // password is digested before saving
   @Column()
   password: string;
 
