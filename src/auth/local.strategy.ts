@@ -17,6 +17,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     if (!user) {
       throw new UnauthorizedException();
     }
+    // will be attached to @Req() req object, as in `req.user`
     return user;
   }
 }
