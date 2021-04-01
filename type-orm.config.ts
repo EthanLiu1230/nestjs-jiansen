@@ -6,6 +6,6 @@ export const postgresConfig: PostgresConnectionOptions = {
   port: 5432,
   database: 'nestjs_jiansen',
   password: 'postgres',
-  entities: ['dist/**/*.entity{ .ts,.js}'],
+  entities: ['dist/src/**/*.entity{ .ts,.js}'],
   synchronize: true,
 };
