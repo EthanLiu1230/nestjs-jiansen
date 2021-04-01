@@ -9,7 +9,7 @@ export class User {
   username: string;
 
   @Column()
-  passwordDigest: string;
+  password: string;
 
   @Column()
   salt: string;
