@@ -2,6 +2,7 @@ import { AuthGuard, PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { jwtConstants } from './jwt.constants';
 import { Injectable } from '@nestjs/common';
+import { ValidUserDto } from './dto/valid-user.dto';
 
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
@@ -12,8 +13,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: any) {
-    return { userId: payload.sub, username: payload.username };
+  async validate(payload: any): Promise<ValidUserDto> {
+    return { id: payload.sub, username: payload.username };
   }
 }
 
