@@ -36,8 +36,9 @@ export class AuthController {
   }
 
   @Post('sign-up')
-  signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto) {
-    console.log('authCredentialsDto ->', authCredentialsDto);
+  async signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto) {
+    // console.log('authCredentialsDto ->', authCredentialsDto);
+    await this.authService.signUp(authCredentialsDto);
   }
 
   @UseGuards(JwtAuthGuard)
