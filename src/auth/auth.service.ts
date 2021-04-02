@@ -32,8 +32,7 @@ export class AuthService {
     return null;
   }
 
-  signAccessToken(user: ValidUserDto): { access_token: string } {
-    // console.log('user => ', user);
+  signIn(user: ValidUserDto): { access_token: string } {
     const { username, id } = user;
     const payload: JwtPayloadDto = { username, sub: id };
     return {
